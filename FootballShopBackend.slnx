@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="FootballShopBackend.Api/FootballShopBackend.Api.csproj" />
+  <Project Path="FootballShopBackend.Application/FootballShopBackend.Application.csproj" />
+  <Project Path="FootballShopBackend.Domain/FootballShopBackend.Domain.csproj" />
+  <Project Path="FootballShopBackend.Infrastracture/FootballShopBackend.Infrastracture.csproj" />
+  <Project Path="FootballShopBackend.Persistance/FootballShopBackend.Persistance.csproj" />
+</Solution>
