@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <Folder Include="Contracts\Infrastracture\" />
+    <Folder Include="Features\Auth\Queries\" />
     <Folder Include="Features\Reviews\Queries\GetReviewsList\GetProduic\" />
   </ItemGroup>
 
