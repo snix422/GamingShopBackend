@@ -15,5 +15,7 @@ namespace FootballShopBackend.Application.Features.Auth.Commands.Register
         public string Phone { get; set; } = string.Empty;
         public string ConfirmPassword { get; set; } = string.Empty;
 
+
+
     }
 }

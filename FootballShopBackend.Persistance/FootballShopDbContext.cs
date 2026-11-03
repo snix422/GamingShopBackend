@@ -1,10 +1,11 @@
 ﻿using FootballShopBackend.Domain.Entities;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Client;
 
 namespace FootballShopBackend.Persistance;
 
-public class FootballShopDbContext : DbContext
+public class FootballShopDbContext : IdentityDbContext<ApplicationUser>
 {
     public FootballShopDbContext(DbContextOptions<FootballShopDbContext> options) : base(options)
     {
