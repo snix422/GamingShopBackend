@@ -1,5 +1,5 @@
 <Solution>
-  <Project Path="FootballShopBackend.Api/FootballShopBackend.Api.csproj" />
+  <Project Path="FootballShopBackend.Api/FootballShopBackend.Api.csproj" Id="ddcecded-50e1-4350-af6a-18c7db8cba7b" />
   <Project Path="FootballShopBackend.Application/FootballShopBackend.Application.csproj" />
   <Project Path="FootballShopBackend.Domain/FootballShopBackend.Domain.csproj" />
   <Project Path="FootballShopBackend.Infrastracture/FootballShopBackend.Infrastracture.csproj" />

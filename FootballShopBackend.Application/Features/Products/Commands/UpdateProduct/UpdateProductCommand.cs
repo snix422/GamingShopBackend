@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace FootballShopBackend.Application.Features.Products.Commands.UpdateProduct
 {
-    public class UpdateProductCommand : IRequest
+    public record UpdateProductCommand : IRequest
     {
-        public Guid CourseId { get; set; }
+        public Guid ProductId { get; set; }
         public string Name { get; set; } = string.Empty;
         public double Price { get; set; }
         public string Description { get; set; } = string.Empty;

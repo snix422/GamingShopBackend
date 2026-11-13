@@ -18,7 +18,7 @@ namespace FootballShopBackend.Application.Features.Products.Commands.UpdateProdu
 
         public async Task Handle(UpdateProductCommand request, CancellationToken cancellationToken)
         {
-            var courseToUpdate = await _asyncRepository.GetByIdAsync(request.CourseId);
+            var courseToUpdate = await _asyncRepository.GetByIdAsync(request.ProductId);
             _mapper.Map(request, courseToUpdate, typeof(UpdateProductCommand), typeof(Product));
             await _asyncRepository.UpdateAsync(courseToUpdate);
         }

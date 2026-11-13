@@ -2,8 +2,5 @@
 
 namespace FootballShopBackend.Application.Features.Teams.Commands.DeleteTeam
 {
-    public class DeleteTeamCommand : IRequest
-    {
-        public Guid Id { get; set; }
-    }
+    public record DeleteTeamCommand(Guid Id) : IRequest;
 }

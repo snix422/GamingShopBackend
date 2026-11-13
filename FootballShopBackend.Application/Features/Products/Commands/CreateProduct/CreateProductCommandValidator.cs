@@ -29,8 +29,15 @@ namespace FootballShopBackend.Application.Features.Products.Commands.CreateProdu
                 .NotEmpty().WithMessage("{PropertyName} is required.")
                 .NotNull()
                 .MaximumLength(500).WithMessage("{PropertyName} must not exceed 500 characters.");
+            RuleFor(p => p.TeamId)
+                .NotEmpty().WithMessage("ID drużyny jest wymagane.")
+                .MustAsync(async (teamId, cancellation) =>
+                {
+                    var team = await _asyncRepository.GetByIdAsync(teamId);
+                    return team != null;
+                }).WithMessage("Wybrana drużyna nie istnieje w bazie danych.");
 
-    
+
 
         }
     }

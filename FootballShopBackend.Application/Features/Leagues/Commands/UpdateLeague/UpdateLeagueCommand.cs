@@ -1,6 +1,8 @@
-﻿namespace FootballShopBackend.Application.Features.Leagues.Commands.UpdateLeague
+﻿using MediatR;
+
+namespace FootballShopBackend.Application.Features.Leagues.Commands.UpdateLeague
 {
-    public class UpdateLeagueCommand 
+    public class UpdateLeagueCommand : IRequest
     {
         public Guid LeagueId { get; set; }
         public string Name { get; set; } = string.Empty;

@@ -19,6 +19,11 @@ namespace FootballShopBackend.Application.Features.Products.Commands.CreateProdu
 
         public async Task<Guid> Handle(CreateProductCommand request, CancellationToken cancellationToken)
         {
+            var team = await _asyncRepository.GetByIdAsync(request.TeamId);
+            if(team == null)
+            {
+                throw new NotFoundException($"Team with {request.TeamId} not found");
+            };
             var validator = new CreateProductCommandValidator(_asyncRepository);
             var validationResult = await validator.ValidateAsync(request, cancellationToken);
             if(validationResult.Errors.Count >0)

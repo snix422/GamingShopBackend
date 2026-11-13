@@ -2,8 +2,6 @@
 
 namespace FootballShopBackend.Application.Features.Leagues.Commands.DeleteLeague
 {
-    public class DeleteLeagueCommand : IRequest
-    {
-        public Guid LeagueId { get; set; }
-    }
+    public record DeleteLeagueCommand(Guid LeagueId) : IRequest;
+    
 }

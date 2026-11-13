@@ -1,9 +1,11 @@
 ﻿using AutoMapper;
+using FootballShopBackend.Application.Common;
+using FootballShopBackend.Application.Contracts.Infrastracture;
 using MediatR;
 
 namespace FootballShopBackend.Application.Features.Auth.Commands.Login
 {
-    public class LoginCommandHandler : IRequestHandler<LoginCommand, string>
+    public class LoginCommandHandler : IRequestHandler<LoginCommand, Result<string>>
     {
         private readonly IAuthService _authService;
         private readonly IMapper _mapper;
@@ -14,7 +16,7 @@ namespace FootballShopBackend.Application.Features.Auth.Commands.Login
             _mapper = mapper;
         }
 
-        public async Task<string> Handle(LoginCommand request, CancellationToken cancellationToken)
+        public async Task<Result<string>> Handle(LoginCommand request, CancellationToken cancellationToken)
         {
             var loginUserDTO = _mapper.Map<LoginUserVM>(request);
 

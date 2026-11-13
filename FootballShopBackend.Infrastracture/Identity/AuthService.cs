@@ -1,4 +1,5 @@
 ﻿using FootballShopBackend.Application.Common;
+using FootballShopBackend.Application.Contracts.Infrastracture;
 using FootballShopBackend.Application.Features.Auth.Commands.Login;
 using FootballShopBackend.Application.Features.Auth.Commands.Register;
 using FootballShopBackend.Domain.Entities;
@@ -85,7 +86,7 @@ namespace FootballShopBackend.Infrastracture.Identity
             }
             var roles = await _userManager.GetRolesAsync(user);
             var token = GenerateJwtToken(user, roles);
-            return Result<string>.Success(token));
+            return Result<string>.Success(token);
         }
 
         private string GenerateJwtToken(ApplicationUser user, IList<string> roles)

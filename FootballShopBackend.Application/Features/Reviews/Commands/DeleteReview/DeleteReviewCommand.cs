@@ -2,9 +2,6 @@
 
 namespace FootballShopBackend.Application.Features.Reviews.Commands.DeleteProduct
 {
-    public class DeleteReviewCommand : IRequest
-    {
-        public Guid ReviewId { get; set; }
+    public record DeleteReviewCommand(Guid ReviewId) : IRequest;
     
-    }
 }
