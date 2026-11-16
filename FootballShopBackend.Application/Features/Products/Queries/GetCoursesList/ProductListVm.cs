@@ -12,5 +12,7 @@ public class ProductListVm
 
     public string Description { get; set; } = string.Empty;
 
+    public string TeamName { get; set; } = string.Empty;
+
     public Double Price { get; set; }
 }

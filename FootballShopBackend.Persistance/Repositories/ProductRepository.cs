@@ -1,4 +1,5 @@
-﻿using FootballShopBackend.Domain.Entities;
+﻿using FootballShopBackend.Application.Contracts.Infrastracture;
+using FootballShopBackend.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace FootballShopBackend.Persistance.Repositories
 {
-    public class ProductRepository : BaseRepository<Product>
+    public class ProductRepository : BaseRepository<Product>, IProductRepository
     {
         private readonly FootballShopDbContext _dbContext;
 

@@ -15,6 +15,10 @@ namespace FootballShopBackend.Application.Features.Products.Queries.GetProductDe
         public string Size { get; set; } = string.Empty;
         public string ImageUrl { get; set; } = string.Empty;
 
+        public string TeamName { get; set; } = string.Empty;
+
+        public string LeagueName { get; set; } = string.Empty;
+
         public string Slug => Name?.ToLower().Replace(" ", "-") ?? string.Empty;
 
     }

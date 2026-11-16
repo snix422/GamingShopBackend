@@ -1,4 +1,6 @@
-﻿using FootballShopBackend.Domain.Entities;
+﻿using FootballShopBackend.Application.Contracts.Infrastracture;
+using FootballShopBackend.Application.Contracts.Persistance;
+using FootballShopBackend.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace FootballShopBackend.Persistance.Repositories
 {
-    public class TeamRepository : BaseRepository<Team>
+    public class TeamRepository : BaseRepository<Team>, ITeamRepository
     {
         private readonly FootballShopDbContext _dbContext;
         public TeamRepository(FootballShopDbContext dbContext) : base(dbContext)
