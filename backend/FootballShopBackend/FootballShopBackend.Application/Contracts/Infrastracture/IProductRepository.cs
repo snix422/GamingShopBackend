@@ -12,5 +12,7 @@ namespace FootballShopBackend.Application.Contracts.Infrastracture
     {
         Task<List<Product>> GetProductsByName(string name);
         Task<List<Product>> GetProductsByTeam(string teamName);
+        Task<List<Product>> GetProductsByLeague(string leagueName);
+        Task<List<Product>> GetBestsellers();
     }
 }

@@ -2,8 +2,10 @@
 using FootballShopBackend.Application.Features.Products.Commands.CreateProduct;
 using FootballShopBackend.Application.Features.Products.Commands.DeleteProduct;
 using FootballShopBackend.Application.Features.Products.Commands.UpdateProduct;
+using FootballShopBackend.Application.Features.Products.Queries.GetBestsellers;
 using FootballShopBackend.Application.Features.Products.Queries.GetCoursesList;
 using FootballShopBackend.Application.Features.Products.Queries.GetProductDetail;
+using FootballShopBackend.Application.Features.Products.Queries.GetProductsByLeague;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -38,6 +40,22 @@ namespace FootballShopBackend.Api.Controllers
             }
 
             return Ok(product);
+        }
+
+        [HttpGet("products/bestsellers")]
+        public async Task<ActionResult<List<ProductDTO>>> GetBestsellers()
+        {
+            var bestsellers = await _mediator.Send(new GetBestsellersQuery());
+
+            return Ok(bestsellers);
+        }
+
+        [HttpGet("products/leagues/${leagueName}")]
+        public async Task<ActionResult<List<ProductDTO>>> GetProductsByLeague(string leagueName)
+        {
+            var products = await _mediator.Send(new GetProductsByLeagueQuery(leagueName));
+
+            return Ok(products);
         }
 
         [HttpPost("products")]

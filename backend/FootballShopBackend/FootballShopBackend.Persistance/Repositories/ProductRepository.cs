@@ -45,6 +45,29 @@ namespace FootballShopBackend.Persistance.Repositories
                 .OrderBy(p => p.Name)
                 .ToListAsync();
         }
+
+        public async Task<List<Product>> GetProductsByLeague(string leagueName)
+        {
+            var query = _dbContext.Products.Include(p => p.Team).AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(leagueName))
+            {
+                query = query.Where(p => p.Team.League.Name.ToLower().Contains(leagueName.ToLower()));
+            }
+
+            return await query
+                .OrderBy(p => p.Name)
+                .ToListAsync();
+        }
+
+        public async Task<List<Product>> GetBestsellers()
+        {
+            var query = _dbContext.Products.Include(p => p.Team).AsQueryable();
+
+            return await query
+                .OrderBy(p => p.Name)
+                .ToListAsync();
+        }
     }
     
 }
